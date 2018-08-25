@@ -48,9 +48,26 @@
                     <MenuItem x:Name="menuFontCourier" Header="Courier" IsCheckable="True" StaysOpenOnClick="True" Click="MenuFontCourier_Click"/>
                 </MenuItem>
             </MenuItem>
-                
-
         </Menu>
+
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button x:Name="tbOpen" ToolTip="Open File" Click="MenuOpen_Click">
+                    <Image Source="./Resources/palms.ico" Height="25" Width="25"/>
+                </Button>
+                <Button x:Name="tbSave" ToolTip="Save File" Click="MenuSave_Click">
+                    <Image Source="./Resources/palms.ico" Height="25" Width="25"/>
+                </Button>
+                <Separator/>
+                <Label>Font Size'</Label>
+                <ComboBox x:Name="ComboFontSize" SelectionChanged="ComboFontSize_SelectionChanged" DropDownClosed="ComboFontSize_DropDownClosed">
+                    <ComboBoxItem>10</ComboBoxItem>
+                    <ComboBoxItem IsSelected="True">12</ComboBoxItem>
+                    <ComboBoxItem>14</ComboBoxItem>
+                    <ComboBoxItem>16</ComboBoxItem>
+                </ComboBox>
+            </ToolBar> 
+        </ToolBarTray>
 
         <TextBox x:Name="txtBoxDoc" Height="290" Width="500"/>
     </DockPanel>

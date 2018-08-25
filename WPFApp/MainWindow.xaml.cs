@@ -55,5 +55,42 @@ namespace WPFApp
             txtBoxDoc.FontFamily = new FontFamily("Courier");
         }
 
+        private bool comboFSClosed = true;
+
+        private void ComboFontSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (comboFSClosed) ChangeTPFontSize();
+            comboFSClosed = true;
+        }
+
+        private void ComboFontSize_DropDownClosed(object sender, EventArgs e)
+        {
+            ComboBox combobox = sender as ComboBox;
+            comboFSClosed = !combobox.IsDropDownOpen;
+            ChangeTPFontSize();
+        }
+
+        private void ChangeTPFontSize()
+        {
+            string fontsize = ComboFontSize.SelectedItem.ToString();
+            fontsize = fontsize.Substring(fontsize.Length - 2);
+
+            switch(fontsize)
+            {
+                case "10":
+                    txtBoxDoc.FontSize = 10;
+                    break;
+                case "12":
+                    txtBoxDoc.FontSize = 12;
+                    break;
+                case "14":
+                    txtBoxDoc.FontSize = 14;
+                    break;
+                case "16":
+                    txtBoxDoc.FontSize = 16;
+                    break;
+            }
+        }
+
     }
 }
