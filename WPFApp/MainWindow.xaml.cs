@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,32 @@ namespace WPFApp
         public MainWindow()
         {
             InitializeComponent();
+
+            this.Title = "My Main Window";
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+        }
+
+        private void Window_MouseMove(object sender, MouseEventArgs e)
+        {
+            Title = e.GetPosition(this).ToString();
+        }
+
+        private void Button1_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("The App is Closing");
+            this.Close();
+        }
+
+        private void BtnOpenFile_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openDlg = new OpenFileDialog();
+            openDlg.ShowDialog();
+        }
+
+        private void BtnSaveFile_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveDlg = new SaveFileDialog();
+            saveDlg.ShowDialog();
         }
     }
 }
