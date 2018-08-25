@@ -12,11 +12,22 @@
     <Window.Resources>
         <sys:String x:Key="strHelloAgain">Hello Again</sys:String>
     </Window.Resources>
-    <WrapPanel Background="Gray" Orientation="Horizontal">
-        <Label Content="Name"/>
-        <TextBox Name="UsersName" Text="Enter Name" Width="150"/>
-        <Button Content="Send" Width="73"/>
-    </WrapPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+    </Grid>
     
 
 </Window>
