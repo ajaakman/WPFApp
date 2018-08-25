@@ -10,24 +10,14 @@
         SizeToContent="WidthAndHeight" Topmost="False" WindowState="Normal" 
         Icon="./Resources/palms.ico" MouseMove="Window_MouseMove">
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="162*"/>
-            <ColumnDefinition Width="162*"/>
-            <ColumnDefinition Width="193*"/>
-        </Grid.ColumnDefinitions>
-        <ScrollViewer Grid.Column="2" Margin="10,10,10,246">
-            <Grid>
-                <Label Content="Label" HorizontalAlignment="Left" Margin="0,0,-17,0" VerticalAlignment="Top"/>
-                <Label Content="Label" HorizontalAlignment="Left" Margin="0,25,-17,0" VerticalAlignment="Top"/>
-                <Label Content="Label" HorizontalAlignment="Left" Margin="0,50,-17,0" VerticalAlignment="Top"/>
-                <Label Content="Label" HorizontalAlignment="Left" Margin="0,75,-17,0" VerticalAlignment="Top"/>
-                <Label Content="Label" HorizontalAlignment="Left" Margin="0,100,-17,0" VerticalAlignment="Top"/>
+    <DockPanel>
+        <Label x:Name="lblTop" DockPanel.Dock="Top" Content="TOP"/>
+        <Label x:Name="lblLeft" DockPanel.Dock="Left" Content="LEFT"/>
+        <Label x:Name="lblRight" DockPanel.Dock="Right" Content="RIGHT"/>
+        <Label x:Name="lblBottom" DockPanel.Dock="Bottom" Content="BOTTOM"/>
+        <Label x:Name="lblCenter"  Content="CENTRE"/>
 
-            </Grid>
-        </ScrollViewer>
-
-    </Grid>
+    </DockPanel>
 
 
 </Window>
