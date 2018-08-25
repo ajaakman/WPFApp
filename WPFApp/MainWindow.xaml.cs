@@ -21,6 +21,8 @@ namespace WPFApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        string usersName = "";
+
         public MainWindow()
         {
             InitializeComponent();
@@ -50,6 +52,13 @@ namespace WPFApp
         {
             SaveFileDialog saveDlg = new SaveFileDialog();
             saveDlg.ShowDialog();
+        }
+
+        private void Send_Button_Click(object sender, RoutedEventArgs e)
+        {
+            usersName = UsersName.Text;
+
+            MessageBox.Show($"Hello {usersName}");
         }
     }
 }

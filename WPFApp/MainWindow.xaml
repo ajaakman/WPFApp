@@ -10,22 +10,14 @@
         SizeToContent="WidthAndHeight" Topmost="False" WindowState="Normal" 
         Icon="./Resources/palms.ico" MouseMove="Window_MouseMove">
     <Window.Resources>
-        <sys:String x:Key="strHelloAgain">Hello Again</sys:String>
-        <Style TargetType="Button">
-            <Setter Property="Margin" Value="1"/>
-            <Setter Property="FontSize" Value="40"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="FontFamily" Value="Consolas"/>
-        </Style>
+        <sys:String x:Key="strHelloAgain">Hello Again</sys:String>        
     </Window.Resources>
-    
-    <StackPanel Orientation="Vertical">
-        <TextBlock HorizontalAlignment="Center" TextWrapping="NoWrap" Text="Hello World" VerticalAlignment="Top" FontSize="40"/>
-        <TextBlock Text="{StaticResource strHelloAgain}" HorizontalAlignment="Center" FontSize="40"/>
-        <Button x:Name="Button1" Height="60" Width="300" HorizontalAlignment="Center" Content="Close Window" Click="Button1_Click"/>
-        <Button x:Name="BtnOpenFile" Height="60" Width="300" HorizontalAlignment="Center" Content="Open File" Click="BtnOpenFile_Click"/>
-        <Button x:Name="BtnSaveFile" Height="60" Width="300" HorizontalAlignment="Center" Content="Save File" Click="BtnSaveFile_Click"/>
 
-    </StackPanel>
+    <Canvas Background="Gray" Height="450" Width="800">
+        <Label Content="Name" Canvas.Left="106" Canvas.Top="78"/>
+        <TextBox Name ="UsersName" Height="23" Canvas.Left="179" TextWrapping="Wrap" Text="Enter Name" Canvas.Top="80" Width="120"/>
+        <Button Content="Send" Canvas.Left="337" Margin="0" Canvas.Top="80" Width="75" Click="Send_Button_Click"/>
+
+    </Canvas>
 
 </Window>
