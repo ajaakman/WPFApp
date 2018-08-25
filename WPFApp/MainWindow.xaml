@@ -8,15 +8,51 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" 
         SizeToContent="WidthAndHeight" Topmost="False" WindowState="Normal" 
-        Icon="./Resources/palms.ico" MouseMove="Window_MouseMove">
+        Icon="./Resources/palms.ico">
 
     <DockPanel>
-        <Label x:Name="lblTop" DockPanel.Dock="Top" Content="TOP"/>
-        <Label x:Name="lblLeft" DockPanel.Dock="Left" Content="LEFT"/>
-        <Label x:Name="lblRight" DockPanel.Dock="Right" Content="RIGHT"/>
-        <Label x:Name="lblBottom" DockPanel.Dock="Bottom" Content="BOTTOM"/>
-        <Label x:Name="lblCenter"  Content="CENTRE"/>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem x:Name="menuNew" Header="_New" InputGestureText="Ctrl+N">
+                    <MenuItem.Icon>
+                        <Image Source="./Resources/palms.ico"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="menuOpen" Header="_Open" InputGestureText="Ctrl+O" Click="MenuOpen_Click">                    
+                    <MenuItem.Icon>
+                        <Image Source="./Resources/palms.ico"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="menuSave" Header="_Save" InputGestureText="Ctrl+S" Click="MenuSave_Click">
+                    <MenuItem.Icon>
+                        <Image Source="./Resources/palms.ico"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="menuExit" Header="E_xit" Click="MenuExit_Click">
+                    <MenuItem.Icon>
+                        <Image Source="./Resources/palms.ico"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
 
+            <MenuItem Header="_Edit" FontFamily="Courier New">
+                <MenuItem x:Name="menuCut" Header="Cut" Command="ApplicationCommands.Cut"
+                          InputGestureText="Ctrl+X"/>
+                <MenuItem x:Name="menuCopy" Header="Copy" Command="ApplicationCommands.Copy"
+                          InputGestureText="Ctrl+C"/>
+                <MenuItem x:Name="menuPaste" Header="Paste" Command="ApplicationCommands.Paste"
+                          InputGestureText="Ctrl+V"/>
+                <Separator />
+                <MenuItem Header="_Font" InputGestureText="Ctrl+f">
+                    <MenuItem x:Name="menuFontTimes" Header="Times" IsCheckable="True" StaysOpenOnClick="True" Click="MenuFontTimes_Click"/>
+                    <MenuItem x:Name="menuFontCourier" Header="Courier" IsCheckable="True" StaysOpenOnClick="True" Click="MenuFontCourier_Click"/>
+                </MenuItem>
+            </MenuItem>
+                
+
+        </Menu>
+
+        <TextBox x:Name="txtBoxDoc" Height="290" Width="500"/>
     </DockPanel>
 
 

@@ -20,38 +20,40 @@ namespace WPFApp
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
-        string usersName = "";
-
+    {      
         public MainWindow()
         {
             InitializeComponent();
+        }      
 
-            this.Title = "My Main Window";
-            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-        }
-
-        private void Window_MouseMove(object sender, MouseEventArgs e)
+        private void MenuExit_Click(object sender, RoutedEventArgs e)
         {
-            Title = e.GetPosition(this).ToString();
-        }
-
-        private void Button1_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("The App is Closing");
             this.Close();
         }
 
-        private void BtnOpenFile_Click(object sender, RoutedEventArgs e)
+        private void MenuOpen_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openDlg = new OpenFileDialog();
             openDlg.ShowDialog();
         }
 
-        private void BtnSaveFile_Click(object sender, RoutedEventArgs e)
+        private void MenuSave_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveDlg = new SaveFileDialog();
             saveDlg.ShowDialog();
         }
+
+        private void MenuFontTimes_Click(object sender, RoutedEventArgs e)
+        {
+            menuFontCourier.IsChecked = false;
+            txtBoxDoc.FontFamily = new FontFamily("Times New Roman");
+        }
+
+        private void MenuFontCourier_Click(object sender, RoutedEventArgs e)
+        {
+            menuFontTimes.IsChecked = false;
+            txtBoxDoc.FontFamily = new FontFamily("Courier");
+        }
+
     }
 }
